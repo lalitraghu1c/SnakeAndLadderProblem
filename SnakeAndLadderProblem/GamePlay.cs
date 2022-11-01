@@ -30,7 +30,10 @@ namespace SnakeAndLadderProblem
                         this.playerPosition += 0;
                         break;
                     case LADDER:
-                        this.playerPosition += DiceRoll();
+                        if (this.playerPosition <= WINNING_POSITION)
+                        {
+                            this.playerPosition += DiceRoll();
+                        }
                         break;
                     case SNAKE:
                         this.playerPosition -= DiceRoll();
@@ -42,6 +45,7 @@ namespace SnakeAndLadderProblem
                 }
                 Console.WriteLine("You are at " + this.playerPosition);
             }
+            Console.WriteLine("Yuppieee !! You won the game");
         }
     }
 }
