@@ -30,10 +30,9 @@ namespace SnakeAndLadderProblem
                         this.playerPosition += 0;
                         break;
                     case LADDER:
-                        if (this.playerPosition <= WINNING_POSITION)
-                        {
-                            this.playerPosition += DiceRoll();
-                        }
+                        int die = DiceRoll();
+                        if (this.playerPosition + die <= WINNING_POSITION)
+                            this.playerPosition+= die;
                         break;
                     case SNAKE:
                         this.playerPosition -= DiceRoll();
